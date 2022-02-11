@@ -29,10 +29,13 @@ namespace KursQAAutDzenana
 
             string pretraga = GoogleSearch.SearchParameters("Acadamy387");
             string pretragaKursa = GoogleSearch.SearchCourse();
-         }
+            string pretragaKursaPrijava = GoogleSearch.SignUpCourse();
+        }
 
 
-      /*  [TestCleanup]
+
+
+      /* [TestCleanup]
         public void Cleanup()
         {
             Driver.Close();

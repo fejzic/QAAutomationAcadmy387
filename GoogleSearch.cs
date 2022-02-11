@@ -1,20 +1,24 @@
-﻿using OpenQA.Selenium;
+﻿using Microsoft.Graph;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
+using OpenQA.Selenium.Support.UI;
+using SeleniumExtras.WaitHelpers;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
+
+
 
 namespace KursQAAutDzenana
 {
     public class GoogleSearch
     {
+
+
         public static string SearchParameters(string word)
         {
             string messege = " ";
             string qa = "qa";
+
 
             try
             {
@@ -49,7 +53,7 @@ namespace KursQAAutDzenana
         public static string SearchCourse()
         {
             string messege = " ";
-            string qa = "qa";
+
 
             try
             {
@@ -85,14 +89,82 @@ namespace KursQAAutDzenana
                 acadamy387CourseClickCourse.Click();
                 Thread.Sleep(500);
 
+
+
+                // Scroll the end of the web page
+                Driver.Instance.FindElement(By.TagName("body")).SendKeys(Keys.Control + Keys.End);
+                Thread.Sleep(1000);
+
+                // Scroll to the top of the web page
+                Driver.Instance.FindElement(By.TagName("body")).SendKeys(Keys.Control + Keys.Home);
+                Thread.Sleep(1000);
+
+                // Scroll down one view pane
+                Driver.Instance.FindElement(By.TagName("body")).SendKeys(Keys.Control + Keys.PageDown);
+                Thread.Sleep(1000);
+
+                // Scroll up one view pane
+                Driver.Instance.FindElement(By.TagName("body")).SendKeys(Keys.Control + Keys.PageUp);
+
             }
             catch (Exception e)
             {
                 messege += "ERROR!!" + e.Message;
             }
             return messege;
+        }
 
+        public static string SignUpCourse()
+        {
+            string messege = " ";
+            string name = "Dzenana";
+
+
+
+            try
+            {
+               
+                var acadamy387CourseClickCourseSignUp = Driver.Instance.FindElement(By.LinkText("Prijavi se"));
+                acadamy387CourseClickCourseSignUp.Click();
+                
+                Alert alert_win = (Alert)Driver.Instance.SwitchTo().Alert();
+                
+                
+                //string alerMessage = alert_win.;
+                //System.Console.WriteLine(alerMessage);
+                /*WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+                IWebElement confirmButton = wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementExists(By.LinkText("Prijavi se")));
+               
+                confirmButton.Click();
+
+               /* WebDriverWait wait = new(driver, TimeSpan.FromSeconds(5000));
+                wait.Until(drv => IsAlertShown(driver));*/
+
+                Thread.Sleep(1000);
+
+
+
+
+
+                var acadamy387CourseClickCourseSignUpName = Driver.Instance.FindElement(By.CssSelector("#name"));
+                acadamy387CourseClickCourseSignUpName.SendKeys(name);
+
+
+
+
+
+
+
+
+
+            }
+            catch (Exception e)
+            {
+                messege += "ERROR!!" + e.Message;
+            }
+            return messege;
         }
     }
 }
+
 
