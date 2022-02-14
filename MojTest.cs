@@ -43,15 +43,14 @@ namespace KursQAAutDzenana
         /*[TestMethod]
          public void TestMethod2()
          {
-             TestArguments parameters = new TestArguments();
-             string URL = parameters.url;
+            
+            var subject = "Passed";
 
-             OpenUrl.GoTo(URL);
 
-             string pretraga = GoogleSearch.SearchParameters("Acadamy387");
-             string pretragaKursa = GoogleSearch.SearchCourse();
-             string pretragaKursaPrijava = GoogleSearch.SignUpCourse();
-         }*/
+            
+            Assert.IsTrue(subject.Contains("Passed"));
+            Assert.IsFalse(subject.Contains("Failed"));
+        }*/
 
 
 
