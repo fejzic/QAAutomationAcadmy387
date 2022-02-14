@@ -40,7 +40,7 @@ namespace KursQAAutDzenana
             Function.WriteInto("Test ended" + DateTime.Now.ToString("(dd_MMMM_hh_mm_ss_tt)"));
         }
 
-        /*[TestMethod]
+        [TestMethod]
          public void TestMethod2()
          {
             
@@ -50,7 +50,7 @@ namespace KursQAAutDzenana
             
             Assert.IsTrue(subject.Contains("Passed"));
             Assert.IsFalse(subject.Contains("Failed"));
-        }*/
+        }
 
 
 
