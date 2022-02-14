@@ -69,7 +69,7 @@ namespace KursQAAutDzenana
                 acadamy387CourseLecturerOption.Click();
                 Thread.Sleep(500);
 
-                var acadamy387CourseLecturerOptionSelect = Driver.Instance.FindElement(By.CssSelector("#lecturer_id > option:nth-child(205)"));
+                var acadamy387CourseLecturerOptionSelect = Driver.Instance.FindElement(By.CssSelector("#lecturer_id > option:nth-child(206)"));
                 acadamy387CourseLecturerOptionSelect.Click();
                 Thread.Sleep(500);
 
@@ -126,28 +126,39 @@ namespace KursQAAutDzenana
                
                 var acadamy387CourseClickCourseSignUp = Driver.Instance.FindElement(By.LinkText("Prijavi se"));
                 acadamy387CourseClickCourseSignUp.Click();
-                
-                Alert alert_win = (Alert)Driver.Instance.SwitchTo().Alert();
-                
-                
-                //string alerMessage = alert_win.;
-                //System.Console.WriteLine(alerMessage);
-                /*WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
-                IWebElement confirmButton = wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementExists(By.LinkText("Prijavi se")));
-               
-                confirmButton.Click();
 
-               /* WebDriverWait wait = new(driver, TimeSpan.FromSeconds(5000));
-                wait.Until(drv => IsAlertShown(driver));*/
+                Driver.Instance.SwitchTo().ActiveElement();
 
                 Thread.Sleep(1000);
 
-
-
-
-
                 var acadamy387CourseClickCourseSignUpName = Driver.Instance.FindElement(By.CssSelector("#name"));
                 acadamy387CourseClickCourseSignUpName.SendKeys(name);
+                Thread.Sleep(1000);
+
+                var acadamy387CourseClickCourseSignUpEmail = Driver.Instance.FindElement(By.CssSelector("#email"));
+
+                acadamy387CourseClickCourseSignUpEmail.SendKeys("myusername@gmail.com");
+                Thread.Sleep(1000);
+
+                var acadamy387CourseClickCourseSignUpAddress = Driver.Instance.FindElement(By.CssSelector("#address"));
+                acadamy387CourseClickCourseSignUpAddress.SendKeys("Address");
+
+                var acadamy387CourseClickCourseSignUpPhone = Driver.Instance.FindElement(By.CssSelector("#phone"));
+                acadamy387CourseClickCourseSignUpPhone.SendKeys("387566");
+
+                var acadamy387CourseClickCourseSignUpOrganization = Driver.Instance.FindElement(By.CssSelector("#organization"));
+                acadamy387CourseClickCourseSignUpOrganization.SendKeys("Organization");
+
+                var acadamy387CourseClickCourseSignUpNote = Driver.Instance.FindElement(By.CssSelector("#note"));
+                acadamy387CourseClickCourseSignUpNote.SendKeys("I want to sign up");
+
+
+                //new WebDriverWait(Driver.Instance, TimeSpan.FromSeconds(3)).Until(ExpectedConditions.FrameToBeAvailableAndSwitchToIt(By.CssSelector("#rc-imageselect")));
+
+
+
+                var acadamy387CourseClickCourseSignUpSubmit = Driver.Instance.FindElement(By.CssSelector("#program-signup-form > input.btn.btn-lg.btn-block.btn-green.btn-submit"));
+
 
 
 
