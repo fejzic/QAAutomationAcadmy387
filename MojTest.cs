@@ -33,13 +33,13 @@ namespace KursQAAutDzenana
             string pretraga = GoogleSearch.SearchParameters("Academy387");
             string pretragaKursa = GoogleSearch.SearchCourse();
             //string pretragaKursaPrijava = GoogleSearch.SignUpCourse();
-            string predavac = GoogleSearch.Lecturer("");
+            string predavac = GoogleSearch.Lecturer();
             string dogadjaj = GoogleSearch.Event();
             string klijent = GoogleSearch.Client();
-            string kontakt = GoogleSearch.Contact("Nemanja Pusara");
+            string kontakt = GoogleSearch.Contact("Nemanja Pušara");
 
 
-            if (!pretraga.Contains("ERROR!") && !predavac.Contains("ERROR") && !dogadjaj.Contains("ERROR") && !klijent.Contains("ERROR") && !kontakt.Contains("ERROR"))
+            if (!pretraga.Contains("ERROR!") && !predavac.Contains("ERROR") /*&& !dogadjaj.Contains("ERROR") && !klijent.Contains("ERROR") && !kontakt.Contains("ERROR")*/)
             {
                 subject = "Passed!!" + subject;
                 Console.Write(subject);
