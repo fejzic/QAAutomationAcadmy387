@@ -24,7 +24,7 @@ namespace KursQAAutDzenana
         [TestMethod]
         public void TestMethod1()
         {
-            var subject = "Passed";
+            var subject = "Moj test";
             TestArguments parameters = new TestArguments();
             string URL = parameters.url;
 
@@ -32,7 +32,23 @@ namespace KursQAAutDzenana
 
             string pretraga = GoogleSearch.SearchParameters("Academy387");
             string pretragaKursa = GoogleSearch.SearchCourse();
-            string pretragaKursaPrijava = GoogleSearch.SignUpCourse();
+            //string pretragaKursaPrijava = GoogleSearch.SignUpCourse();
+            string predavac = GoogleSearch.Lecturer("");
+            string dogadjaj = GoogleSearch.Event();
+            string klijent = GoogleSearch.Client();
+            string kontakt = GoogleSearch.Contact("Nemanja Pusara");
+
+
+            if (!pretraga.Contains("ERROR!") && !predavac.Contains("ERROR") && !dogadjaj.Contains("ERROR") && !klijent.Contains("ERROR") && !kontakt.Contains("ERROR"))
+            {
+                subject = "Passed!!" + subject;
+                Console.Write(subject);
+            }
+            else
+            {
+                subject = "Faild!!" + subject;
+               
+            }
 
             Assert.IsTrue(subject.Contains("Passed"));
             Assert.IsFalse(subject.Contains("Failed"));
@@ -40,7 +56,7 @@ namespace KursQAAutDzenana
             Function.WriteInto("Test ended" + DateTime.Now.ToString("(dd_MMMM_hh_mm_ss_tt)"));
         }
 
-        [TestMethod]
+        /*[TestMethod]
          public void TestMethod2()
          {
             
@@ -50,7 +66,7 @@ namespace KursQAAutDzenana
             
             Assert.IsTrue(subject.Contains("Passed"));
             Assert.IsFalse(subject.Contains("Failed"));
-        }
+        */
 
 
 

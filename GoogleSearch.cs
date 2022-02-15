@@ -50,6 +50,128 @@ namespace KursQAAutDzenana
             return messege;
         }
 
+        public static string Contact(string lecturer)
+        {
+            string messege = " ";
+
+            try
+            {
+                var academy387Contact = Driver.Instance.FindElement(By.LinkText("Kontakt"));
+                academy387Contact.Click();
+                Thread.Sleep(1000);
+
+
+                Driver.Instance.FindElement(By.TagName("body")).SendKeys(Keys.Control + Keys.End);
+                Thread.Sleep(1000);
+
+                // Scroll down one view pane
+                Driver.Instance.FindElement(By.TagName("body")).SendKeys(Keys.Control + Keys.PageDown);
+                Thread.Sleep(1000);
+
+                var academy387Payment = Driver.Instance.FindElement(By.LinkText("Upute za plaćanje"));
+                academy387Payment.Click();
+                Thread.Sleep(1000);
+
+                Driver.Instance.FindElement(By.TagName("body")).SendKeys(Keys.Control + Keys.End);
+                Thread.Sleep(1000);
+
+                // Scroll to the top of the web page
+                Driver.Instance.FindElement(By.TagName("body")).SendKeys(Keys.Control + Keys.Home);
+                Thread.Sleep(1000);
+
+                // Scroll down one view pane
+                Driver.Instance.FindElement(By.TagName("body")).SendKeys(Keys.Control + Keys.PageDown);
+                Thread.Sleep(1000);
+
+                // Scroll up one view pane
+                Driver.Instance.FindElement(By.TagName("body")).SendKeys(Keys.Control + Keys.PageUp);
+
+                var academy387SearchLecturer = Driver.Instance.FindElement(By.CssSelector("#main-search-input"));
+                academy387SearchLecturer.SendKeys(lecturer);
+                Thread.Sleep(1000);
+
+                Actions builder = new Actions(Driver.Instance);
+                builder.SendKeys(Keys.Enter).Perform();
+                Thread.Sleep(500);
+
+
+            }
+            catch (Exception e)
+            {
+                messege += "Error" + e.Message;
+            }
+            return messege;
+        }
+
+    
+
+        public static string Client()
+        {
+            string messege = " ";
+
+            try
+            {
+                var academy387Client = Driver.Instance.FindElement(By.LinkText("Klijenti"));
+                academy387Client.Click();
+                Thread.Sleep(1000);
+
+
+                Driver.Instance.FindElement(By.TagName("body")).SendKeys(Keys.Control + Keys.End);
+                Thread.Sleep(1000);
+
+                // Scroll to the top of the web page
+                Driver.Instance.FindElement(By.TagName("body")).SendKeys(Keys.Control + Keys.Home);
+                Thread.Sleep(1000);
+
+                // Scroll down one view pane
+                Driver.Instance.FindElement(By.TagName("body")).SendKeys(Keys.Control + Keys.PageDown);
+                Thread.Sleep(1000);
+
+                // Scroll up one view pane
+                Driver.Instance.FindElement(By.TagName("body")).SendKeys(Keys.Control + Keys.PageUp);
+
+
+            }
+            catch (Exception e)
+            {
+                messege += "Error" + e.Message;
+            }
+            return messege;
+        }
+
+        public static string Event()
+        {
+            string messege = " ";
+
+            try{
+                var academy387Event = Driver.Instance.FindElement(By.LinkText("Događaji"));
+                academy387Event.Click();
+
+                Driver.Instance.FindElement(By.TagName("body")).SendKeys(Keys.Control + Keys.End);
+                Thread.Sleep(1000);
+
+                // Scroll to the top of the web page
+                Driver.Instance.FindElement(By.TagName("body")).SendKeys(Keys.Control + Keys.Home);
+                Thread.Sleep(1000);
+
+                // Scroll down one view pane
+                Driver.Instance.FindElement(By.TagName("body")).SendKeys(Keys.Control + Keys.PageDown);
+                Thread.Sleep(1000);
+
+                // Scroll up one view pane
+                Driver.Instance.FindElement(By.TagName("body")).SendKeys(Keys.Control + Keys.PageUp);
+
+
+            }
+            catch (Exception e)
+            {
+                messege += "Error" + e.Message;
+            }
+            return messege;
+        }
+
+        
+
         public static string SearchCourse()
         {
             string messege = " ";
@@ -159,10 +281,7 @@ namespace KursQAAutDzenana
 
                 var acadamy387CourseClickCourseSignUpSubmit = Driver.Instance.FindElement(By.CssSelector("#program-signup-form > input.btn.btn-lg.btn-block.btn-green.btn-submit"));
 
-
-
-
-
+                Driver.Instance.Close();
 
 
 
@@ -174,6 +293,26 @@ namespace KursQAAutDzenana
                 messege += "ERROR!!" + e.Message;
             }
             return messege;
+        }
+
+        public static string Lecturer(string lecturer)
+        {
+            
+            try
+            {
+                var academy387Lecturer = Driver.Instance.FindElement(By.LinkText("Predavači"));
+                academy387Lecturer.Click();
+                Thread.Sleep(1000);
+
+
+
+
+            }
+            catch (Exception e)
+            {
+                lecturer += "ERROR!!" + e.Message;
+            }
+            return lecturer; 
         }
     }
 }
