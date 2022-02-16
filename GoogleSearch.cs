@@ -163,7 +163,7 @@ namespace KursQAAutDzenana
 
                 var acadamy387CourseClickCourseSignUpSubmit = Driver.Instance.FindElement(By.CssSelector("#program-signup-form > input.btn.btn-lg.btn-block.btn-green.btn-submit"));
 
-                Driver.Instance.Close();
+                acadamy387CourseClickCourseSignUpSubmit.Click(); 
 
 
 

@@ -32,7 +32,7 @@ namespace KursQAAutDzenana
 
             string pretraga = GoogleSearch.SearchParameters("Academy387");
             string pretragaKursa = GoogleSearch.SearchCourse();
-            //string pretragaKursaPrijava = GoogleSearch.SignUpCourse();
+            string pretragaKursaPrijava = GoogleSearch.SignUpCourse();
             string predavac = GoogleSearch.Lecturer();
             string dogadjaj = GoogleSearch.Event();
             string klijent = GoogleSearch.Client();
