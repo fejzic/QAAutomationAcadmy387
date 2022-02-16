@@ -177,7 +177,7 @@ namespace KursQAAutDzenana
             return messege;
         }
 
-        public static string Lecturer()
+        public static string Lecturer(string lecturer)
         {
             string messege = " ";
 
@@ -187,13 +187,31 @@ namespace KursQAAutDzenana
                 academy387Lecturer.Click();
                 Thread.Sleep(1000);
 
-                var predavaciSlovo = Driver.Instance.FindElement(By.CssSelector("div.page-content > div > section > div > div:nth-child(1) > div.col-xs-12.hidden-xs.hidden-sm > div > ul > li:nth-child(14)"));
-                predavaciSlovo.Click();
-                Thread.Sleep(5000);
+                var academy387LecturerSearchByLetter = Driver.Instance.FindElement(By.CssSelector("div.page-content > div > section > div > div:nth-child(1) > div.col-xs-12.hidden-xs.hidden-sm > div > ul > li:nth-child(14) >a"));
+                academy387LecturerSearchByLetter.Click();
+                Thread.Sleep(1000);
 
-               /* var predavačiSlovoNemanja = Driver.Instance.FindElement(By.CssSelector("#lecturers-container div:nth-child(9) .lecturer-image.text-center"));
-                predavačiSlovoNemanja.Click();
-                Thread.Sleep(500);*/
+                var academy387LecturerSearchByPhoto = Driver.Instance.FindElement(By.CssSelector("#lecturers-container > div > div:nth-child(9) > div > a > div.lecturer-image.text-center"));
+                academy387LecturerSearchByPhoto.Click();
+                Thread.Sleep(1000);
+
+                // Scroll the end of the web page
+                Driver.Instance.FindElement(By.TagName("body")).SendKeys(Keys.Control + Keys.End);
+                Thread.Sleep(1000);
+
+                // Scroll to the top of the web page
+                Driver.Instance.FindElement(By.TagName("body")).SendKeys(Keys.Control + Keys.Home);
+                Thread.Sleep(1000);
+
+                // Scroll down one view pane
+                Driver.Instance.FindElement(By.TagName("body")).SendKeys(Keys.Control + Keys.PageDown);
+                Thread.Sleep(1000);
+
+                // Scroll up one view pane
+                Driver.Instance.FindElement(By.TagName("body")).SendKeys(Keys.Control + Keys.PageUp);
+
+                Driver.Instance.Navigate().Back();
+
 
 
 
