@@ -212,6 +212,12 @@ namespace KursQAAutDzenana
 
                 Driver.Instance.Navigate().Back();
 
+                var academy387LecturerSearchByName = Driver.Instance.FindElement(By.CssSelector("#lecturers-search"));
+                academy387LecturerSearchByName.SendKeys(lecturer);
+
+                Actions builder = new Actions(Driver.Instance);
+                builder.SendKeys(Keys.Enter).Perform();
+                Thread.Sleep(500);
 
 
 
