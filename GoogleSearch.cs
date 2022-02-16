@@ -156,6 +156,7 @@ namespace KursQAAutDzenana
                 var acadamy387CourseClickCourseSignUpNote = Driver.Instance.FindElement(By.CssSelector("#note"));
                 acadamy387CourseClickCourseSignUpNote.SendKeys("I want to sign up");
 
+               
 
                 //new WebDriverWait(Driver.Instance, TimeSpan.FromSeconds(3)).Until(ExpectedConditions.FrameToBeAvailableAndSwitchToIt(By.CssSelector("#rc-imageselect")));
 
