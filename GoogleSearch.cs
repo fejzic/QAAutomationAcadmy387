@@ -41,6 +41,8 @@ namespace KursQAAutDzenana
                 builder.SendKeys(Keys.Enter).Perform();
                 Thread.Sleep(500);
 
+                Function.TakeScreenshot();
+
 
             }
             catch (Exception e)
