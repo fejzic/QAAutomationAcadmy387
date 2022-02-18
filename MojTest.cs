@@ -24,7 +24,8 @@ namespace KursQAAutDzenana
         [TestMethod]
         public void TestMethod1()
         {
-            var subject = "Moj test";
+            string subject = "",
+                    body = "";
             TestArguments parameters = new TestArguments();
             string URL = parameters.url;
 
@@ -41,14 +42,16 @@ namespace KursQAAutDzenana
 
             if (!pretraga.Contains("ERROR!") && !pretragaKursa.Contains("ERROR") && !predavac.Contains("ERROR") && !dogadjaj.Contains("ERROR") && !klijent.Contains("ERROR") && !kontakt.Contains("ERROR") && pretragaKursaPrijava.Contains("ERROR") && !pretragaKursaPrijava.Contains("ERROR"))
             {
-                subject = "Passed!!" + subject;
-                Console.Write(subject);
+                subject = "Passed!!! " + subject;
+                body = "Test je prošao" + "\n" + pretraga + pretragaKursa + predavac + dogadjaj + klijent + pretragaKursaPrijava + kontakt; ;
             }
             else
             {
-                subject = "Faild!!" + subject;
+                subject = "Failed!!! " + subject;
+                body = pretraga + pretragaKursa + predavac + dogadjaj + klijent + pretragaKursaPrijava + kontakt;
                
             }
+            Function.SendEmailAttachment(subject, body);
 
             Assert.IsTrue(subject.Contains("Passed"));
             Assert.IsFalse(subject.Contains("Failed"));

@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -17,6 +18,52 @@ namespace KursQAAutDzenana
 
             File.AppendAllText(filePath, readText + Environment.NewLine);
 
+        }
+
+
+        public static string SendEmailAttachment(string subject, string body)
+        {
+            string message = "",
+                username = "dzenana.fejzic@gmail.com",
+                password = "halapaca66?";
+
+
+            try
+            {
+
+                MailMessage mail = new MailMessage();
+                SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
+
+                mail.From = new MailAddress("dzenana.fejzic@gmail.com");
+                mail.To.Add("dzenana.fejzic@gmail.com");
+                mail.Subject = subject;
+                mail.Body = body;
+
+                System.Net.Mail.Attachment attachment;
+
+                DirectoryInfo d = new DirectoryInfo(@"C:/Screenshot/");
+                FileInfo[] Files = d.GetFiles("*.jpeg", SearchOption.AllDirectories);
+
+                foreach (FileInfo file in Files)
+                {
+                    attachment = new System.Net.Mail.Attachment(file.FullName);
+                    mail.Attachments.Add(attachment);
+                }
+
+                SmtpServer.Port = 587;
+                SmtpServer.Credentials = new System.Net.NetworkCredential(username, password);
+                SmtpServer.EnableSsl = true;
+
+                SmtpServer.Send(mail);
+                mail.Dispose();
+
+            }
+            catch (Exception e)
+            {
+                message += "ERROR!!!" + e.Message;
+            }
+
+            return message;
         }
 
         public static void TakeScreenshot()
