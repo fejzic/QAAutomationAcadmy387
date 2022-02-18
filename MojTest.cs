@@ -40,7 +40,7 @@ namespace KursQAAutDzenana
             string kontakt = GoogleSearch.Contact("Nemanja Pušara");
 
 
-            if (!pretraga.Contains("ERROR!") && !pretragaKursa.Contains("ERROR") && !predavac.Contains("ERROR") && !dogadjaj.Contains("ERROR") && !klijent.Contains("ERROR") && !kontakt.Contains("ERROR") && pretragaKursaPrijava.Contains("ERROR") && !pretragaKursaPrijava.Contains("ERROR"))
+            if (!pretraga.Contains("ERROR") && !pretragaKursa.Contains("ERROR") && !predavac.Contains("ERROR") && !dogadjaj.Contains("ERROR") && !klijent.Contains("ERROR") && !kontakt.Contains("ERROR") && !pretragaKursaPrijava.Contains("ERROR") )
             {
                 subject = "Passed!!! " + subject;
                 body = "Test je prošao" + "\n" + pretraga + pretragaKursa + predavac + dogadjaj + klijent + pretragaKursaPrijava + kontakt; ;

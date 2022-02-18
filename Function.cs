@@ -42,7 +42,7 @@ namespace KursQAAutDzenana
                 System.Net.Mail.Attachment attachment;
 
                 DirectoryInfo d = new DirectoryInfo(@"C:/Screenshot/");
-                FileInfo[] Files = d.GetFiles("*.jpeg", SearchOption.AllDirectories);
+                FileInfo[] Files = d.GetFiles("*", SearchOption.AllDirectories);
 
                 foreach (FileInfo file in Files)
                 {
