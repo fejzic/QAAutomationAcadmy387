@@ -48,7 +48,7 @@ namespace KursQAAutDzenana
             else
             {
                 subject = "Failed!!! " + subject;
-                body = pretraga + pretragaKursa + predavac + dogadjaj + klijent + pretragaKursaPrijava + kontakt;
+                body = "Test je prošao" + "\n" + pretraga + pretragaKursa + predavac + dogadjaj + klijent + pretragaKursaPrijava + kontakt;
                
             }
             Function.SendEmailAttachment(subject, body);
