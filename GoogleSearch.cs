@@ -4,6 +4,7 @@ using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.UI;
 using SeleniumExtras.WaitHelpers;
 using System;
+using System.Collections.Generic;
 using System.Threading;
 
 
@@ -16,7 +17,7 @@ namespace KursQAAutDzenana
 
         public static string SearchParameters(string word)
         {
-            string messege = " ";
+            string message = " ";
             string qa = "qa";
 
 
@@ -47,18 +48,16 @@ namespace KursQAAutDzenana
             }
             catch (Exception e)
             {
-                messege += "ERROR !!" + e.Message;
+                message += "ERROR !!" + e.Message;
             }
-            return messege;
+            return message;
         }
-
-        
 
         
 
         public static string SearchCourse()
         {
-            string messege = " ";
+            string message = " ";
 
 
             try
@@ -115,14 +114,14 @@ namespace KursQAAutDzenana
             }
             catch (Exception e)
             {
-                messege += "ERROR!!" + e.Message;
+                message += "ERROR!!" + e.Message;
             }
-            return messege;
+            return message;
         }
 
         public static string SignUpCourse()
         {
-            string messege = " ";
+            string message = " ";
             string name = "Dzenana";
 
 
@@ -175,14 +174,14 @@ namespace KursQAAutDzenana
             }
             catch (Exception e)
             {
-                messege += "ERROR!!" + e.Message;
+                message += "ERROR!!" + e.Message;
             }
-            return messege;
+            return message;
         }
 
         public static string Lecturer(string lecturer)
         {
-            string messege = " ";
+            string message = " ";
 
             try
             {
@@ -230,14 +229,14 @@ namespace KursQAAutDzenana
             }
             catch (Exception e)
             {
-                messege += "ERROR!!" + e.Message;
+                message += "ERROR!!" + e.Message;
             }
-            return messege; 
+            return message; 
         }
 
         public static string Event()
         {
-            string messege = " ";
+            string message = " ";
 
             try
             {
@@ -262,14 +261,14 @@ namespace KursQAAutDzenana
             }
             catch (Exception e)
             {
-                messege += "Error" + e.Message;
+                message += "Error" + e.Message;
             }
-            return messege;
+            return message;
         }
 
         public static string Contact(string lecturer)
         {
-            string messege = " ";
+            string message = " ";
 
             try
             {
@@ -315,16 +314,16 @@ namespace KursQAAutDzenana
             }
             catch (Exception e)
             {
-                messege += "Error" + e.Message;
+                message += "Error" + e.Message;
             }
-            return messege;
+            return message;
         }
 
 
 
         public static string Client()
         {
-            string messege = " ";
+            string message = " ";
 
             try
             {
@@ -351,12 +350,50 @@ namespace KursQAAutDzenana
             }
             catch (Exception e)
             {
-                messege += "Error" + e.Message;
+                message += "ERROR" + e.Message;
             }
-            return messege;
+            return message;
         }
 
-       
+        public static string MainPage()
+        {
+            string message = "";
+
+            try
+            {
+                var academy387Logo = Driver.Instance.FindElement(By.CssSelector("div > div.navbar-header > a"));
+                academy387Logo.Click();
+                Thread.Sleep(1000);
+
+                var academy387SlidePicturesRight = Driver.Instance.FindElement(By.CssSelector("#bs-carousel > a.carousel-control.right"));
+                for (int i=0; i<4; i++)
+                {
+                    academy387SlidePicturesRight.Click();
+                    Thread.Sleep(1000);
+
+                }
+
+                var academy387SlidePicturesLeft = Driver.Instance.FindElement(By.CssSelector("#bs-carousel > a.carousel-control.left"));
+                for (int i = 0; i < 4; i++)
+                {
+                    academy387SlidePicturesLeft.Click();
+                    Thread.Sleep(1000);
+
+                }
+
+
+
+
+            }
+            catch (Exception e)
+            {
+                message += "ERROR" + e.Message;
+            }
+
+            return message;
+        }
+
+
     }
 }
 

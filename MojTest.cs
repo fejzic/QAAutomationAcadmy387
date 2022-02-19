@@ -38,6 +38,7 @@ namespace KursQAAutDzenana
             string dogadjaj = GoogleSearch.Event();
             string klijent = GoogleSearch.Client();
             string kontakt = GoogleSearch.Contact("Nemanja Pušara");
+            string glavniProzor = GoogleSearch.MainPage();
 
 
             if (!pretraga.Contains("ERROR") && !pretragaKursa.Contains("ERROR") && !predavac.Contains("ERROR") && !dogadjaj.Contains("ERROR") && !klijent.Contains("ERROR") && !kontakt.Contains("ERROR") && !pretragaKursaPrijava.Contains("ERROR") )
