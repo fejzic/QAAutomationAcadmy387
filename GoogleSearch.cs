@@ -381,6 +381,32 @@ namespace KursQAAutDzenana
 
                 }
 
+                // Scroll the end of the web page
+                Driver.Instance.FindElement(By.TagName("body")).SendKeys(Keys.Control + Keys.End);
+                Thread.Sleep(1000);
+
+                // Scroll to the top of the web page
+                Driver.Instance.FindElement(By.TagName("body")).SendKeys(Keys.Control + Keys.Home);
+                Thread.Sleep(1000);
+
+                // Scroll down one view pane
+                Driver.Instance.FindElement(By.TagName("body")).SendKeys(Keys.Control + Keys.PageDown);
+                Thread.Sleep(1000);
+
+                // Scroll up one view pane
+                Driver.Instance.FindElement(By.TagName("body")).SendKeys(Keys.Control + Keys.PageUp);
+                Thread.Sleep(1000);
+
+                var academy387LogoLoadMoreButton = Driver.Instance.FindElement(By.CssSelector("#see-all-programs > div > a"));
+                academy387LogoLoadMoreButton.Click();
+
+                Driver.Instance.Navigate().Back();
+
+
+
+
+
+
 
 
 
