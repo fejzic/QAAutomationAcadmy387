@@ -41,16 +41,16 @@ namespace KursQAAutDzenana
             string glavniProzor = GoogleSearch.MainPage();
 
 
-            if (!pretraga.Contains("ERROR") && !pretragaKursa.Contains("ERROR") && !predavac.Contains("ERROR") && !dogadjaj.Contains("ERROR") && !klijent.Contains("ERROR") && !kontakt.Contains("ERROR") && !pretragaKursaPrijava.Contains("ERROR") )
+            if (!pretraga.Contains("ERROR") && !pretragaKursa.Contains("ERROR") && !predavac.Contains("ERROR") && !dogadjaj.Contains("ERROR") && !klijent.Contains("ERROR") && !kontakt.Contains("ERROR") && !pretragaKursaPrijava.Contains("ERROR") && !glavniProzor.Contains("ERROR"))
             {
                 subject = "Passed!!! " + subject;
-                body = "Test je prošao" + "\n" + pretraga + pretragaKursa + predavac + dogadjaj + klijent + pretragaKursaPrijava + kontakt; ;
+                body = "Test je prošao" + "\n" + pretraga + pretragaKursa + predavac + dogadjaj + klijent + pretragaKursaPrijava + kontakt + glavniProzor ;
             }
             else
             {
                 subject = "Failed!!! " + subject;
-                body = "Test je prošao" + "\n" + pretraga + pretragaKursa + predavac + dogadjaj + klijent + pretragaKursaPrijava + kontakt;
-               
+                body = "Test je prošao" + "\n" + pretraga + pretragaKursa + predavac + dogadjaj + klijent + pretragaKursaPrijava + kontakt + glavniProzor;
+
             }
             Function.SendEmailAttachment(subject, body);
 
