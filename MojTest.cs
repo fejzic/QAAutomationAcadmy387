@@ -52,7 +52,7 @@ namespace KursQAAutDzenana
                 body = "Test je prošao" + "\n" + pretraga + pretragaKursa + predavac + dogadjaj + klijent + pretragaKursaPrijava + kontakt + glavniProzor;
 
             }
-            Function.SendEmailAttachment(subject, body);
+           
 
             Assert.IsTrue(subject.Contains("Passed"));
             Assert.IsFalse(subject.Contains("Failed"));
