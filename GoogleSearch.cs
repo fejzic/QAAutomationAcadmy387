@@ -402,11 +402,11 @@ namespace KursQAAutDzenana
                 Driver.Instance.FindElement(By.TagName("body")).SendKeys(Keys.Control + Keys.PageUp);
                 Thread.Sleep(1000);
 
-                
 
-                
 
-                var academy387LogoFindMoreButton = Driver.Instance.FindElement(By.CssSelector("#bs-carousel > div > div.item.slide.text-center.active > a"));
+
+
+                var academy387LogoFindMoreButton = Driver.Instance.FindElement(By.CssSelector("[href*='/programs']"));
                 academy387LogoFindMoreButton.Click();
 
 
