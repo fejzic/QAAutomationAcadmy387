@@ -381,11 +381,6 @@ namespace KursQAAutDzenana
 
                 }
 
-                
-
-
-                Driver.Instance.Navigate().Back();
-
                 // Scroll the end of the web page
                 Driver.Instance.FindElement(By.TagName("body")).SendKeys(Keys.Control + Keys.End);
                 Thread.Sleep(1000);
@@ -401,21 +396,6 @@ namespace KursQAAutDzenana
                 // Scroll up one view pane
                 Driver.Instance.FindElement(By.TagName("body")).SendKeys(Keys.Control + Keys.PageUp);
                 Thread.Sleep(1000);
-
-
-
-
-
-                
-                
-                Thread.Sleep(1000);
-
-
-
-
-
-
-
 
 
             }

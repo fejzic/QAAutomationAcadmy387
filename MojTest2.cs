@@ -36,6 +36,8 @@ namespace KursQAAutDzenana
             OpenUrl.GoTo(URL);
 
             string messagePHPTravel = PHPTravels.SearchSite("phptravels");
+            string categoryPHPTravelsTravel = PHPTravels.TestCategoryTravel();
+            string categoryPHPTravelsVersion = PHPTravels.TestCategoryVersion();
 
 
             if (!messagePHPTravel.Contains("ERROR"))
