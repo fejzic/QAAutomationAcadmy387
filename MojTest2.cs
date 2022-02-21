@@ -38,17 +38,18 @@ namespace KursQAAutDzenana
             string messagePHPTravel = PHPTravels.SearchSite("phptravels");
             string categoryPHPTravelsTravel = PHPTravels.TestCategoryTravel();
             string categoryPHPTravelsVersion = PHPTravels.TestCategoryVersion();
+            string categoryPHPTravelsEvent = PHPTravels.TestCategoryEvents();
 
 
-            if (!messagePHPTravel.Contains("ERROR"))
+            if (!messagePHPTravel.Contains("ERROR") && !categoryPHPTravelsTravel.Contains("ERROR") && !categoryPHPTravelsEvent.Contains("ERROR"))
             {
                 subject = "Passed!!! " + subject;
-                body = "Test je prošao" + "\n" + messagePHPTravel;
+                body = "Test je prošao" + "\n" + messagePHPTravel + categoryPHPTravelsTravel + categoryPHPTravelsVersion + categoryPHPTravelsEvent;
             }
             else
             {
                 subject = "Failed!!! " + subject;
-                body = "Test je prošao" + "\n" + messagePHPTravel;
+                body = "Test je prošao" + "\n" + messagePHPTravel + categoryPHPTravelsTravel + categoryPHPTravelsVersion + categoryPHPTravelsEvent;
             }
 
 
