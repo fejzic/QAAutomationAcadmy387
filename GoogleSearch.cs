@@ -381,8 +381,8 @@ namespace KursQAAutDzenana
 
                 }
 
-                var academy387LogoLoadMoreButton = Driver.Instance.FindElement(By.CssSelector("#see-all-programs > div"));
-                academy387LogoLoadMoreButton.Click();
+                
+
 
                 Driver.Instance.Navigate().Back();
 
@@ -406,9 +406,9 @@ namespace KursQAAutDzenana
 
 
 
-                var academy387LogoFindMoreButton = Driver.Instance.FindElement(By.CssSelector("[href*='/programs']"));
-                academy387LogoFindMoreButton.Click();
-
+                
+                
+                Thread.Sleep(1000);
 
 
 

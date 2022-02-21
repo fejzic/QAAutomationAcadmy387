@@ -104,7 +104,6 @@ C:\KursQAAutDzenana\bin\Debug\net6.0\zh-Hans\Microsoft.VisualStudio.TestPlatform
 C:\KursQAAutDzenana\bin\Debug\net6.0\zh-Hant\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
 C:\KursQAAutDzenana\bin\Debug\net6.0\zh-Hant\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
 C:\KursQAAutDzenana\bin\Debug\net6.0\zh-Hant\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
-C:\KursQAAutDzenana\obj\Debug\net6.0\KursQAAutDzenana.csproj.AssemblyReference.cache
 C:\KursQAAutDzenana\obj\Debug\net6.0\KursQAAutDzenana.GeneratedMSBuildEditorConfig.editorconfig
 C:\KursQAAutDzenana\obj\Debug\net6.0\KursQAAutDzenana.AssemblyInfoInputs.cache
 C:\KursQAAutDzenana\obj\Debug\net6.0\KursQAAutDzenana.AssemblyInfo.cs
@@ -114,3 +113,4 @@ C:\KursQAAutDzenana\obj\Debug\net6.0\KursQAAutDzenana.dll
 C:\KursQAAutDzenana\obj\Debug\net6.0\ref\KursQAAutDzenana.dll
 C:\KursQAAutDzenana\obj\Debug\net6.0\KursQAAutDzenana.pdb
 C:\KursQAAutDzenana\obj\Debug\net6.0\KursQAAutDzenana.genruntimeconfig.cache
+C:\KursQAAutDzenana\obj\Debug\net6.0\KursQAAutDzenana.csproj.AssemblyReference.cache
