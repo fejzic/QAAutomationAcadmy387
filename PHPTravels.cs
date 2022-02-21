@@ -271,6 +271,54 @@ namespace KursQAAutDzenana
 
                 Thread.Sleep(3000);
 
+                Driver.Instance.Navigate().Back();
+
+
+
+            }
+            catch (Exception e)
+            {
+                message += "ERROR!" + e.Message;
+            }
+
+            return message;
+        }
+
+        public static string TestCategoryTechnology()
+        {
+            string message = "";
+
+            try
+            {
+                var phpTravelsCompanyBlogCategory = Driver.Instance.FindElement(By.CssSelector("body > header > nav > div > div"));
+                phpTravelsCompanyBlogCategory.Click();
+                Thread.Sleep(1000);
+
+                var phpTravelsCompanyBlogCategoryTechnology = Driver.Instance.FindElement(By.CssSelector("body > header > nav > div > div > ul > li:nth-child(5) > a"));
+                phpTravelsCompanyBlogCategoryTechnology.Click();
+                Thread.Sleep(1000);
+
+                var phpTravelsCompanyBlogCategoryTechnologyOption = Driver.Instance.FindElement(By.CssSelector("body > div.categories > div > div > div > div > div:nth-child(3) > a"));
+                phpTravelsCompanyBlogCategoryTechnologyOption.Click();
+
+                Function.TakeScreenshot();
+
+                Driver.Instance.FindElement(By.TagName("body")).SendKeys(Keys.Control + Keys.End);
+                Thread.Sleep(1000);
+
+                // Scroll to the top of the web page
+                Driver.Instance.FindElement(By.TagName("body")).SendKeys(Keys.Control + Keys.Home);
+                Thread.Sleep(1000);
+
+                // Scroll down one view pane
+                Driver.Instance.FindElement(By.TagName("body")).SendKeys(Keys.Control + Keys.PageDown);
+                Thread.Sleep(1000);
+
+                // Scroll up one view pane
+                Driver.Instance.FindElement(By.TagName("body")).SendKeys(Keys.Control + Keys.PageUp);
+
+                Thread.Sleep(3000);
+
                 for (int i = 0; i < 2; i++)
                 {
                     Driver.Instance.Navigate().Back();

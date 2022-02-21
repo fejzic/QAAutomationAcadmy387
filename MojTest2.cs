@@ -40,18 +40,19 @@ namespace KursQAAutDzenana
             string categoryPHPTravelsVersion = PHPTravels.TestCategoryVersion();
             string categoryPHPTravelsEvent = PHPTravels.TestCategoryEvents();
             string categoryPHPTravelsOffers = PHPTravels.TestCategoryOffers();
+            string categoryPHPTravelsTechnology = PHPTravels.TestCategoryTechnology();
 
-            if (!messagePHPTravel.Contains("ERROR") && !categoryPHPTravelsTravel.Contains("ERROR") && !categoryPHPTravelsEvent.Contains("ERROR") && !categoryPHPTravelsOffers.Contains("ERROR"))
+            if (!messagePHPTravel.Contains("ERROR") && !categoryPHPTravelsTravel.Contains("ERROR") && !categoryPHPTravelsEvent.Contains("ERROR") && !categoryPHPTravelsOffers.Contains("ERROR") && !categoryPHPTravelsTechnology.Contains("ERROR"))
             {
                 subject = "Passed!!! " + subject;
                 body = "Test je prošao" + "\n" + messagePHPTravel + categoryPHPTravelsTravel + categoryPHPTravelsVersion + categoryPHPTravelsEvent 
-                    + categoryPHPTravelsOffers;
+                    + categoryPHPTravelsOffers + categoryPHPTravelsTechnology;
             }
             else
             {
                 subject = "Failed!!! " + subject;
                 body = "Test je prošao" + "\n" + messagePHPTravel + categoryPHPTravelsTravel + categoryPHPTravelsVersion + categoryPHPTravelsEvent
-                    + categoryPHPTravelsOffers;
+                    + categoryPHPTravelsOffers + categoryPHPTravelsTechnology;
             }
 
 
