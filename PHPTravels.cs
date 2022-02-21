@@ -82,12 +82,15 @@ namespace KursQAAutDzenana
             {
                 var phpTravelsCompanyBlogCategory = Driver.Instance.FindElement(By.CssSelector("body > header > nav > div > div"));
                 phpTravelsCompanyBlogCategory.Click();
+                Thread.Sleep(1000);
 
                 var phpTravelsCompanyBlogCategoryTravel = Driver.Instance.FindElement(By.CssSelector("body > header > nav > div > div > ul > li:nth-child(1) > a"));
                 phpTravelsCompanyBlogCategoryTravel.Click();
+                Thread.Sleep(1000);
 
                 var phpTravelsCompanyBlogCategoryTravelHotel = Driver.Instance.FindElement(By.CssSelector("body > div.categories > div > div > div > div > div:nth-child(35) > a"));
                 phpTravelsCompanyBlogCategoryTravelHotel.Click();
+                Thread.Sleep(1000);
 
                 Function.TakeScreenshot();
 
@@ -134,12 +137,15 @@ namespace KursQAAutDzenana
             {
                 var phpTravelsCompanyBlogCategory = Driver.Instance.FindElement(By.CssSelector("body > header > nav > div > div"));
                 phpTravelsCompanyBlogCategory.Click();
+                Thread.Sleep(1000);
 
                 var phpTravelsCompanyBlogCategoryVersion = Driver.Instance.FindElement(By.CssSelector("body > header > nav > div > div > ul > li:nth-child(2) > a"));
                 phpTravelsCompanyBlogCategoryVersion.Click();
+                Thread.Sleep(1000);
 
                 var phpTravelsCompanyBlogCategoryVersionOption = Driver.Instance.FindElement(By.CssSelector("body > div > div > div > div > div > div:nth-child(1) > a"));
                 phpTravelsCompanyBlogCategoryVersionOption.Click();
+                
 
                 Function.TakeScreenshot();
 
@@ -183,14 +189,68 @@ namespace KursQAAutDzenana
             {
                 var phpTravelsCompanyBlogCategory = Driver.Instance.FindElement(By.CssSelector("body > header > nav > div > div"));
                 phpTravelsCompanyBlogCategory.Click();
-
-                
+                Thread.Sleep(1000);
 
                 var phpTravelsCompanyBlogCategoryEvent = Driver.Instance.FindElement(By.CssSelector("body > header > nav > div > div > ul > li:nth-child(3) > a"));
                 phpTravelsCompanyBlogCategoryEvent.Click();
+                Thread.Sleep(1000);
 
                 var phpTravelsCompanyBlogCategoryEventOption = Driver.Instance.FindElement(By.CssSelector("body > div.categories > div > div > div > div > div:nth-child(1) > a"));
-                phpTravelsCompanyBlogCategoryEventOption.Click();
+                phpTravelsCompanyBlogCategoryEventOption.Click(); 
+                
+
+
+                Function.TakeScreenshot();
+
+
+                Driver.Instance.FindElement(By.TagName("body")).SendKeys(Keys.Control + Keys.End);
+                Thread.Sleep(1000);
+
+                // Scroll to the top of the web page
+                Driver.Instance.FindElement(By.TagName("body")).SendKeys(Keys.Control + Keys.Home);
+                Thread.Sleep(1000);
+
+                // Scroll down one view pane
+                Driver.Instance.FindElement(By.TagName("body")).SendKeys(Keys.Control + Keys.PageDown);
+                Thread.Sleep(1000);
+
+                // Scroll up one view pane
+                Driver.Instance.FindElement(By.TagName("body")).SendKeys(Keys.Control + Keys.PageUp);
+
+                Thread.Sleep(3000);
+
+                for (int i = 0; i < 2; i++)
+                {
+                    Driver.Instance.Navigate().Back();
+                }
+
+            }
+            catch (Exception e)
+            {
+                message += "ERROR!" + e.Message;
+            }
+
+            return message;
+        }
+
+        public static string TestCategoryOffers()
+        {
+            string message = "";
+
+            try
+            {
+                var phpTravelsCompanyBlogCategory = Driver.Instance.FindElement(By.CssSelector("body > header > nav > div > div"));
+                phpTravelsCompanyBlogCategory.Click();
+                Thread.Sleep(1000);
+
+                var phpTravelsCompanyBlogCategoryOffer = Driver.Instance.FindElement(By.CssSelector("body > header > nav > div > div > ul > li:nth-child(4) > a"));
+                phpTravelsCompanyBlogCategoryOffer.Click();
+                Thread.Sleep(1000);
+
+                var phpTravelsCompanyBlogCategoryOffersOption = Driver.Instance.FindElement(By.CssSelector("body > div.categories > div > div > div > div > div:nth-child(1) > a"));
+                phpTravelsCompanyBlogCategoryOffersOption.Click();
+
+
 
                 Function.TakeScreenshot();
 
