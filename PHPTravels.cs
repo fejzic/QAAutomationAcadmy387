@@ -61,6 +61,7 @@ namespace KursQAAutDzenana
                 Driver.Instance.FindElement(By.TagName("body")).SendKeys(Keys.Control + Keys.PageUp);
 
                 Function.TakeScreenshot();
+                Driver.Instance.Navigate().Back();
 
 
             }
@@ -106,6 +107,12 @@ namespace KursQAAutDzenana
                 Driver.Instance.FindElement(By.TagName("body")).SendKeys(Keys.Control + Keys.PageUp);
 
                 Thread.Sleep(3000);
+
+                for (int i = 0; i < 2; i++)
+                {
+                    Driver.Instance.Navigate().Back();
+                }
+                
 
 
 
@@ -153,6 +160,8 @@ namespace KursQAAutDzenana
 
                 Thread.Sleep(3000);
 
+                Driver.Instance.Navigate().Back();
+
 
             }
             catch (Exception e)
@@ -174,8 +183,11 @@ namespace KursQAAutDzenana
 
                 
 
-                var phpTravelsCompanyBlogCategoryVersionOption = Driver.Instance.FindElement(By.CssSelector("body > div > div > div > div > div > div:nth-child(1) > a"));
-                phpTravelsCompanyBlogCategoryVersionOption.Click();
+                var phpTravelsCompanyBlogCategoryEvent = Driver.Instance.FindElement(By.CssSelector("body > header > nav > div > div > ul > li:nth-child(3) > a"));
+                phpTravelsCompanyBlogCategoryEvent.Click();
+
+                var phpTravelsCompanyBlogCategoryEventOption = Driver.Instance.FindElement(By.CssSelector("body > div.categories > div > div > div > div > div:nth-child(1) > a"));
+                phpTravelsCompanyBlogCategoryEventOption.Click();
 
                 Function.TakeScreenshot();
 
