@@ -345,8 +345,9 @@ namespace KursQAAutDzenana
                 phpTravelsCompanyBlogCategory.Click();
                 Thread.Sleep(1000);
 
-                var phpTravelsCompanyBlogCategoryBusinessOption = Driver.Instance.FindElement(By.CssSelector("body > div.categories > div > div > div > div > div:nth - child(3) > a > img"));
+                var phpTravelsCompanyBlogCategoryBusinessOption = Driver.Instance.FindElement(By.CssSelector("body nav div div li:nth-child(6) a"));
                 phpTravelsCompanyBlogCategoryBusinessOption.Click();
+                Thread.Sleep(2000);
 
                 Function.TakeScreenshot();
 
