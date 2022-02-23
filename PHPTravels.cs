@@ -271,7 +271,7 @@ namespace KursQAAutDzenana
 
                 Thread.Sleep(3000);
 
-                Driver.Instance.Navigate().Back();
+                //Driver.Instance.Navigate().Back();
 
 
 
@@ -319,10 +319,7 @@ namespace KursQAAutDzenana
 
                 Thread.Sleep(3000);
 
-                for (int i = 0; i < 2; i++)
-                {
-                    Driver.Instance.Navigate().Back();
-                }
+                
 
             }
             catch (Exception e)
