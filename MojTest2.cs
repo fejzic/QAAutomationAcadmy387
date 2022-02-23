@@ -41,18 +41,20 @@ namespace KursQAAutDzenana
             string categoryPHPTravelsEvent = PHPTravels.TestCategoryEvents();
             string categoryPHPTravelsOffers = PHPTravels.TestCategoryOffers();
             string categoryPHPTravelsTechnology = PHPTravels.TestCategoryTechnology();
+            string categoryPHPTravelsBusiness = PHPTravels.TestCategoryBusiness();
+                
 
-            if (!messagePHPTravel.Contains("ERROR") && !categoryPHPTravelsTravel.Contains("ERROR") && !categoryPHPTravelsEvent.Contains("ERROR") && !categoryPHPTravelsOffers.Contains("ERROR") && !categoryPHPTravelsTechnology.Contains("ERROR"))
+            if (!messagePHPTravel.Contains("ERROR") && !categoryPHPTravelsTravel.Contains("ERROR") && !categoryPHPTravelsEvent.Contains("ERROR") && !categoryPHPTravelsOffers.Contains("ERROR") && !categoryPHPTravelsTechnology.Contains("ERROR") && !categoryPHPTravelsBusiness.Contains("ERROR"))
             {
                 subject = "Passed!!! " + subject;
                 body = "Test je prošao" + "\n" + messagePHPTravel + categoryPHPTravelsTravel + categoryPHPTravelsVersion + categoryPHPTravelsEvent 
-                    + categoryPHPTravelsOffers + categoryPHPTravelsTechnology;
+                    + categoryPHPTravelsOffers + categoryPHPTravelsTechnology + categoryPHPTravelsBusiness;
             }
             else
             {
                 subject = "Failed!!! " + subject;
                 body = "Test je prošao" + "\n" + messagePHPTravel + categoryPHPTravelsTravel + categoryPHPTravelsVersion + categoryPHPTravelsEvent
-                    + categoryPHPTravelsOffers + categoryPHPTravelsTechnology;
+                    + categoryPHPTravelsOffers + categoryPHPTravelsTechnology + categoryPHPTravelsBusiness;
             }
 
 

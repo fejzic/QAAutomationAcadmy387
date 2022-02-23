@@ -71,7 +71,7 @@ namespace KursQAAutDzenana
             }
             return message;
 
-            
+
         }
 
         public static string TestCategoryTravel()
@@ -115,7 +115,7 @@ namespace KursQAAutDzenana
                 {
                     Driver.Instance.Navigate().Back();
                 }
-                
+
 
 
 
@@ -145,7 +145,7 @@ namespace KursQAAutDzenana
 
                 var phpTravelsCompanyBlogCategoryVersionOption = Driver.Instance.FindElement(By.CssSelector("body > div > div > div > div > div > div:nth-child(1) > a"));
                 phpTravelsCompanyBlogCategoryVersionOption.Click();
-                
+
 
                 Function.TakeScreenshot();
 
@@ -196,8 +196,8 @@ namespace KursQAAutDzenana
                 Thread.Sleep(1000);
 
                 var phpTravelsCompanyBlogCategoryEventOption = Driver.Instance.FindElement(By.CssSelector("body > div.categories > div > div > div > div > div:nth-child(1) > a"));
-                phpTravelsCompanyBlogCategoryEventOption.Click(); 
-                
+                phpTravelsCompanyBlogCategoryEventOption.Click();
+
 
 
                 Function.TakeScreenshot();
@@ -319,7 +319,8 @@ namespace KursQAAutDzenana
 
                 Thread.Sleep(3000);
 
-                
+                var phpTravelsLogo = Driver.Instance.FindElement(By.CssSelector("body > header > nav > div > ul.fl > li.brand.waves-effect.waves-button > a"));
+                phpTravelsLogo.Click();
 
             }
             catch (Exception e)
@@ -327,6 +328,55 @@ namespace KursQAAutDzenana
                 message += "ERROR!" + e.Message;
             }
 
+            return message;
+        }
+
+        public static string TestCategoryBusiness()
+        {
+            string message = "";
+
+            try
+            {
+                var phpTravelsCompanyBlogCategory = Driver.Instance.FindElement(By.CssSelector("body > header > nav > div > div"));
+                phpTravelsCompanyBlogCategory.Click();
+                Thread.Sleep(1000);
+
+                var phpTravelsCompanyBlogCategoryBusiness = Driver.Instance.FindElement(By.CssSelector("body > header > nav > div > div > ul > li:nth-child(6) > a"));
+                phpTravelsCompanyBlogCategory.Click();
+                Thread.Sleep(1000);
+
+                var phpTravelsCompanyBlogCategoryBusinessOption = Driver.Instance.FindElement(By.CssSelector("body > div.categories > div > div > div > div > div:nth - child(3) > a > img"));
+                phpTravelsCompanyBlogCategoryBusinessOption.Click();
+
+                Function.TakeScreenshot();
+
+                Driver.Instance.FindElement(By.TagName("body")).SendKeys(Keys.Control + Keys.End);
+                Thread.Sleep(1000);
+
+                // Scroll to the top of the web page
+                Driver.Instance.FindElement(By.TagName("body")).SendKeys(Keys.Control + Keys.Home);
+                Thread.Sleep(1000);
+
+                // Scroll down one view pane
+                Driver.Instance.FindElement(By.TagName("body")).SendKeys(Keys.Control + Keys.PageDown);
+                Thread.Sleep(1000);
+
+                // Scroll up one view pane
+                Driver.Instance.FindElement(By.TagName("body")).SendKeys(Keys.Control + Keys.PageUp);
+
+                Thread.Sleep(3000); 
+                Function.TakeScreenshot();
+
+           
+
+                
+
+
+            }
+            catch (Exception e)
+            {
+                message += "ERROR!" + e.Message;
+            }
             return message;
         }
     }
